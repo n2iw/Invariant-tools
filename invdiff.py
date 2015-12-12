@@ -4,26 +4,8 @@
 import os
 import sys
 
-def wav2spx(directory):
-    if os.path.isdir(directory):
-        files = os.listdir(directory)
-        for f in files:
-            file = os.path.join(directory, f)
-            new_file = file.replace('.wav', '.spx')
-            if os.path.isfile(file):
-                if file.endswith('.wav'): 
-                    print 'convert ' + file + ' to ' + new_file
-                    os.system('speexenc --vbr ' + file + ' ' + new_file)
-    elif os.path.isfile(directory):
-        if directory.endswith('.wav'): # single wav file
-            file = directory
-            print 'convert ' + file + ' to ' + new_file
-            os.system('speexenc --vbr ' + file + ' ' + new_file)
-    else:
-        print 'Can\'t read file: ' + directory
-
 def loadInvariant(fileName):
-    print 'Loading Invariant from file: ' + fileName
+    print 'Loading Invariants from file: ' + fileName
     f = open(fileName)
     data = {}
     new_ppt = False
@@ -45,6 +27,13 @@ def loadInvariant(fileName):
                 data[ppt].append(line.rstrip("\n\r"))
     f.close()
     return data
+def printInv(data):
+    print 'Invariant file has ' + str(len(data.keys())) + ' Program Points'
+    for ppt in data:
+        print '=' * 80
+        print ppt
+        for inv in data[ppt]:
+            print '  ' + inv
 
 def compareInv(inv1, inv2):
     print 'Comparing invariants'
@@ -60,8 +49,9 @@ if __name__ == '__main__':
         print sys.argv[2] + ' is not a file!'
         exit(1)
     inv1 = loadInvariant(sys.argv[1])
-    print inv1
+    printInv(inv1)
     inv2 = loadInvariant(sys.argv[2])
-    print '========================='
-    print inv2
-    diff = compareInv(inv1, inv2)
+    #print '========================='
+    #printInv(inv2)
+    
+    #diff = compareInv(inv1, inv2)
