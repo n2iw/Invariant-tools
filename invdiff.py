@@ -5,7 +5,7 @@ import os
 import sys
 
 def loadInvariant(fileName):
-    print 'Loading Invariants from file: ' + fileName
+    #print 'Loading Invariants from file: ' + fileName
     f = open(fileName)
     data = {}
     new_ppt = False
@@ -29,7 +29,7 @@ def loadInvariant(fileName):
     return data
 
 def printInv(data):
-    print 'Invariant file has ' + str(len(data.keys())) + ' Program Points'
+    print str(len(data.keys())) + ' Program Points'
     for ppt in data:
         print '=' * 80
         print ppt
@@ -39,11 +39,10 @@ def printInv(data):
 # data1 is the invariant file for bug-free version 
 # data2 is the invariant file for buggy version
 # only compare Program Points that exits in both data1 and data2
-def compareInv(data1, data2):
+def compareInvs(data1, data2):
     data1_only = {}
     data2_only = {}
     both = {}
-    print 'Comparing invariants'
     for ppt in data2:
         if ppt in data1:
             intersect = data1[ppt] & data2[ppt]
@@ -57,6 +56,10 @@ def compareInv(data1, data2):
             d2_only = data2[ppt] - data1[ppt]
             if d2_only:
                 data2_only[ppt] = d2_only
+
+            if len(d1_only):
+                print ppt
+                print '  has ' + str(len(d1_only)) + '/' + str(len(data1[ppt])) + ' unique invariants'
         elif data2[ppt]:
             data2_only[ppt] = data2[ppt]
     return (data1_only, data2_only, both)
@@ -72,19 +75,16 @@ if __name__ == '__main__':
         print sys.argv[2] + ' is not a file!'
         exit(1)
     inv1 = loadInvariant(sys.argv[1])
-    #printInv(inv1)
     inv2 = loadInvariant(sys.argv[2])
-    #print ''
-    #printInv(inv2)
     
-    (d1_only, d2_only, both) = compareInv(inv1, inv2)
-    print ''
-    print 'Invariants only in ' + sys.argv[1]
-    printInv(d1_only)
-    print ''
-    print 'Invariants only in ' + sys.argv[2]
-    printInv(d2_only) 
-    print ''
-    print 'Invariants in both files'
-    printInv(both)
+    (d1_only, d2_only, both) = compareInvs(inv1, inv2)
+#    print ''
+#    print 'Invariants only in ' + sys.argv[1]
+#    printInv(d1_only)
+#    print ''
+#    print 'Invariants only in ' + sys.argv[2]
+#    printInv(d2_only) 
+#    print ''
+#    print 'Invariants in both files'
+#    printInv(both)
 
