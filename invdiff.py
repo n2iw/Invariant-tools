@@ -77,14 +77,14 @@ if __name__ == '__main__':
     inv1 = loadInvariant(sys.argv[1])
     inv2 = loadInvariant(sys.argv[2])
     
-    (d1_only, d2_only, both) = compareInvs(inv1, inv2)
-#    print ''
-#    print 'Invariants only in ' + sys.argv[1]
-#    printInv(d1_only)
-#    print ''
-#    print 'Invariants only in ' + sys.argv[2]
-#    printInv(d2_only) 
-#    print ''
-#    print 'Invariants in both files'
-#    printInv(both)
+    (inv1_only, inv2_only, both) = compareInvs(inv1, inv2)
 
+    for ppt in inv1_only:
+        print '=' * 80
+        print ppt
+        for inv in inv1_only[ppt]:
+            print '(1) ' + inv
+
+        if ppt in inv2_only:
+            for inv in inv2_only[ppt]:
+                print '(2) ' + inv
