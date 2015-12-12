@@ -82,9 +82,14 @@ if __name__ == '__main__':
     for ppt in inv1_only:
         print '=' * 80
         print ppt
+        out = {}
+        
         for inv in inv1_only[ppt]:
-            print '(1) ' + inv
+            out[inv] = '(1) ' + inv
 
         if ppt in inv2_only:
             for inv in inv2_only[ppt]:
-                print '(2) ' + inv
+                out[inv] = '(2) ' + inv
+
+        for word in sorted(out.keys()):
+            print out[word]
