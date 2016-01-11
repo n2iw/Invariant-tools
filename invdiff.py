@@ -6,6 +6,8 @@ import sys
 
 def loadInvariantToArrays(fileName):
     #print 'Loading Invariants from file: ' + fileName
+    if not os.path.exists(fileName):
+        exit(1)
     f = open(fileName)
     data = []
     ppts = []
@@ -35,6 +37,9 @@ def loadInvariantToArrays(fileName):
 
 def loadInvariantToDict(fileName):
     #print 'Loading Invariants from file: ' + fileName
+    if not os.path.exists(fileName):
+        exit(1)
+
     f = open(fileName)
     data = {}
     new_ppt = False
@@ -84,8 +89,8 @@ def doubleQuotes(s):
     return s.replace('"', '""')
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
-        print 'Usage: ' + os.path.basename(sys.argv[0]) + ' invariantFile1 invariantFile2'
+    if len(sys.argv) < 3:
+        print 'Usage: ' + os.path.basename(sys.argv[0]) + ' FixedVersionInvariantFile BuggyInvariantFile1 [BuggyInvariantFile2...]'
         exit(1)
     if not os.path.isfile(sys.argv[1]):
         print sys.argv[1] + ' is not a file!'
@@ -93,14 +98,25 @@ if __name__ == '__main__':
     if not os.path.isfile(sys.argv[2]):
         print sys.argv[2] + ' is not a file!'
         exit(1)
-    (ppts, invs1) = loadInvariantToArrays(sys.argv[1])
-    data2 = loadInvariantToDict(sys.argv[2])
     
-    results = compareInvs2(ppts, invs1, data2)
+    (ppts, invs1) = loadInvariantToArrays(sys.argv[1])
 
-    print '"Program Point","Invariant","' + sys.argv[2] + '"'
+    data = []
+    results = []
+    for fileName in sys.argv[2:]:
+        data.append(loadInvariantToDict(fileName))
+        results.append(compareInvs2(ppts, invs1, data[-1]))
+
+    sys.stdout.write('"Program Points","Invariants"')
+    for fileName in sys.argv[2:]:
+        sys.stdout.write(',"' + fileName + '"')
+    sys.stdout.write("\n");
+
     for i in xrange(0, len(ppts)):
         ppt = ppts[i]
         for j in xrange(0, len(invs1[i])):
-            print '"' + doubleQuotes(ppt) + '","' + doubleQuotes(invs1[i][j]) + '",' + str(results[i][j])
+            sys.stdout.write('"' + doubleQuotes(ppt) + '","' + doubleQuotes(invs1[i][j]) + '"')
+            for result in results:
+                sys.stdout.write(',' + str(result[i][j]))
+            sys.stdout.write("\n")
         
