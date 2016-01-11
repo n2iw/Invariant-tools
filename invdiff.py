@@ -24,14 +24,15 @@ def loadInvariant(fileName):
                 ppt = line.rstrip("\n\r")
                 data[ppt] = set() 
             else:
-                data[ppt].add(line.rstrip("\n\r"))
+                if ppt:
+                    data[ppt].add(line.rstrip("\n\r"))
     f.close()
     return data
 
 def printInv(data):
     print str(len(data.keys())) + ' Program Points'
     for ppt in data:
-        print '=' * 80
+        print '=' * 75
         print ppt
         for inv in data[ppt]:
             print '  ' + inv
@@ -57,9 +58,9 @@ def compareInvs(data1, data2):
             if d2_only:
                 data2_only[ppt] = d2_only
 
-            if len(d1_only):
-                print ppt
-                print '  has ' + str(len(d1_only)) + '/' + str(len(data1[ppt])) + ' unique invariants'
+            #if len(d1_only):
+            #    print ppt
+            #    print '  has ' + str(len(d1_only)) + '/' + str(len(data1[ppt])) + ' unique invariants'
         elif data2[ppt]:
             data2_only[ppt] = data2[ppt]
     return (data1_only, data2_only, both)
@@ -79,17 +80,20 @@ if __name__ == '__main__':
     
     (inv1_only, inv2_only, both) = compareInvs(inv1, inv2)
 
+    print "file1 => " + sys.argv[1]
+    print "file2 => " + sys.argv[2]
+
     for ppt in inv1_only:
-        print '=' * 80
+        print '=' * 75
         print ppt
         out = {}
         
         for inv in inv1_only[ppt]:
-            out[inv] = '(1) ' + inv
+            out[inv] = '<-file1  ' + inv
 
         if ppt in inv2_only:
             for inv in inv2_only[ppt]:
-                out[inv] = '(2) ' + inv
+                out[inv] = ' file2-> ' + inv
 
         for word in sorted(out.keys()):
             print out[word]
