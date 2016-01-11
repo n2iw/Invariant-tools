@@ -4,7 +4,36 @@
 import os
 import sys
 
-def loadInvariant(fileName):
+def loadInvariantToArrays(fileName):
+    #print 'Loading Invariants from file: ' + fileName
+    f = open(fileName)
+    data = []
+    ppts = []
+    index = -1
+    new_ppt = False
+    ppt = None
+    while True:
+        line = f.readline()
+        if line == '': # end of file
+            break
+        elif line == '\n':
+            continue
+        elif line.startswith("==="): # new program point
+            new_ppt = True
+            index += 1
+        else:
+            if new_ppt:
+                new_ppt = False
+                ppt = line.rstrip("\n\r")
+                ppts.append(ppt)
+                data.append([])
+            else:
+                if ppt:
+                    data[index].append(line.rstrip("\n\r"))
+    f.close()
+    return (ppts, data)
+
+def loadInvariantToDict(fileName):
     #print 'Loading Invariants from file: ' + fileName
     f = open(fileName)
     data = {}
@@ -29,41 +58,30 @@ def loadInvariant(fileName):
     f.close()
     return data
 
-def printInv(data):
-    print str(len(data.keys())) + ' Program Points'
-    for ppt in data:
-        print '=' * 75
-        print ppt
-        for inv in data[ppt]:
-            print '  ' + inv
-
-# data1 is the invariant file for bug-free version 
+# ppts is array of all ppt
+# invs1 is the invariant arrays for bug-free version 
 # data2 is the invariant file for buggy version
 # only compare Program Points that exits in both data1 and data2
-def compareInvs(data1, data2):
-    data1_only = {}
-    data2_only = {}
-    both = {}
-    for ppt in data2:
-        if ppt in data1:
-            intersect = data1[ppt] & data2[ppt]
-            if intersect:
-                both[ppt] = intersect
+def compareInvs2(ppts, invs1, data2):
+    results = []
+    for i in xrange(0, len(ppts)):
+        ppt = ppts[i]
+        results.append([])
+        if ppt in data2:
+            for j in xrange(0, len(invs1[i])):
+                inv = invs1[i][j]
+                if inv in data2[ppt]:
+                    results[i].append(0)
+                else:
+                    results[i].append(1)
 
-            d1_only = data1[ppt] - data2[ppt]
-            if d1_only:
-                data1_only[ppt] = d1_only
+        else: #ppt not in buggy version, fill vector with 0s
+            for j in xrange(0, len(invs1[i])):
+                results[i].append(0)
+    return results
 
-            d2_only = data2[ppt] - data1[ppt]
-            if d2_only:
-                data2_only[ppt] = d2_only
-
-            #if len(d1_only):
-            #    print ppt
-            #    print '  has ' + str(len(d1_only)) + '/' + str(len(data1[ppt])) + ' unique invariants'
-        elif data2[ppt]:
-            data2_only[ppt] = data2[ppt]
-    return (data1_only, data2_only, both)
+def doubleQuotes(s):
+    return s.replace('"', '""')
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
@@ -75,25 +93,14 @@ if __name__ == '__main__':
     if not os.path.isfile(sys.argv[2]):
         print sys.argv[2] + ' is not a file!'
         exit(1)
-    inv1 = loadInvariant(sys.argv[1])
-    inv2 = loadInvariant(sys.argv[2])
+    (ppts, invs1) = loadInvariantToArrays(sys.argv[1])
+    data2 = loadInvariantToDict(sys.argv[2])
     
-    (inv1_only, inv2_only, both) = compareInvs(inv1, inv2)
+    results = compareInvs2(ppts, invs1, data2)
 
-    print "file1 => " + sys.argv[1]
-    print "file2 => " + sys.argv[2]
-
-    for ppt in inv1_only:
-        print '=' * 75
-        print ppt
-        out = {}
+    print '"Program Point","Invariant","' + sys.argv[2] + '"'
+    for i in xrange(0, len(ppts)):
+        ppt = ppts[i]
+        for j in xrange(0, len(invs1[i])):
+            print '"' + doubleQuotes(ppt) + '","' + doubleQuotes(invs1[i][j]) + '",' + str(results[i][j])
         
-        for inv in inv1_only[ppt]:
-            out[inv] = '<-file1  ' + inv
-
-        if ppt in inv2_only:
-            for inv in inv2_only[ppt]:
-                out[inv] = ' file2-> ' + inv
-
-        for word in sorted(out.keys()):
-            print out[word]
