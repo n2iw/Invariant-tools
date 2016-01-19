@@ -1,14 +1,14 @@
 #!/usr/bin/env python
-# compare two Daikon invariant files (text format)
+# compare Daikon invariant files (text format) and print result matrix
+# this version is used to compare special buggy invariant files, 
+# which contains all the invariants a buggy version violates
 
 import os
 import sys
+import argparse
 
-def loadInvariantToArrays(fileName):
+def loadInvariantToArrays(f):
     #print 'Loading Invariants from file: ' + fileName
-    if not os.path.exists(fileName):
-        exit(1)
-    f = open(fileName)
     data = []
     ppts = []
     index = -1
@@ -35,12 +35,8 @@ def loadInvariantToArrays(fileName):
     f.close()
     return (ppts, data)
 
-def loadInvariantToDict(fileName):
+def loadInvariantToDict(f):
     #print 'Loading Invariants from file: ' + fileName
-    if not os.path.exists(fileName):
-        exit(1)
-
-    f = open(fileName)
     data = {}
     new_ppt = False
     ppt = None
@@ -65,9 +61,12 @@ def loadInvariantToDict(fileName):
 
 # ppts is array of all ppt
 # invs1 is the invariant arrays for bug-free version 
-# data2 is the invariant file for buggy version
-# only compare Program Points that exits in both data1 and data2
-def compareInvs2(ppts, invs1, data2):
+# data2 is the invariant dict for buggy version
+#   or if use option -v or --use_violates
+#   data2 is the violate dict
+# only compare Program Points that exits in both invs1 and data2
+# for ppts only in invs1 results will be 0s
+def compareInvs(ppts, invs1, data2):
     results = []
     for i in xrange(0, len(ppts)):
         ppt = ppts[i]
@@ -76,46 +75,57 @@ def compareInvs2(ppts, invs1, data2):
             for j in xrange(0, len(invs1[i])):
                 inv = invs1[i][j]
                 if inv in data2[ppt]:
-                    results[i].append(0)
+                    if args.use_violates:
+                        results[i].append(1)
+                    else:
+                        results[i].append(0)
                 else:
-                    results[i].append(1)
+                    if args.use_violates:
+                        results[i].append(0)
+                    else:
+                        results[i].append(1)
 
         else: #ppt not in buggy version, fill vector with 0s
             for j in xrange(0, len(invs1[i])):
                 results[i].append(0)
     return results
 
+#replace double quotes " with two double quotes "", required by csv file format
 def doubleQuotes(s):
     return s.replace('"', '""')
 
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
-        print 'Usage: ' + os.path.basename(sys.argv[0]) + ' FixedVersionInvariantFile BuggyInvariantFile1 [BuggyInvariantFile2...]'
-        exit(1)
-    if not os.path.isfile(sys.argv[1]):
-        print sys.argv[1] + ' is not a file!'
-        exit(1)
-    if not os.path.isfile(sys.argv[2]):
-        print sys.argv[2] + ' is not a file!'
-        exit(1)
+    parser = argparse.ArgumentParser(description="Compare invariant files and output a matrix in csv format")
+    parser.add_argument('fixed', help='(combined)invariant file of fixed version', type=argparse.FileType('r'))
+    parser.add_argument('buggy', nargs='+', help='invariant files of buggy versions', type=argparse.FileType('r'))
+    parser.add_argument('-n', '--no_names', action='store_true', help="instead of printing program point and invariant names, print numbers, this option can significantly reduce output file size")
+    parser.add_argument('-v', '--use_violates', action='store_true', help="buggy files are violate files instead of invariant files")
+    args = parser.parse_args()
     
-    (ppts, invs1) = loadInvariantToArrays(sys.argv[1])
+    (ppts, invs1) = loadInvariantToArrays(args.fixed)
 
     data = []
     results = []
-    for fileName in sys.argv[2:]:
+    for fileName in args.buggy:
         data.append(loadInvariantToDict(fileName))
-        results.append(compareInvs2(ppts, invs1, data[-1]))
+        results.append(compareInvs(ppts, invs1, data[-1]))
 
-    sys.stdout.write('"Program Points","Invariants"')
-    for fileName in sys.argv[2:]:
-        sys.stdout.write(',"' + fileName + '"')
+    if args.no_names:
+        sys.stdout.write('"Invariant Number"')
+    else:
+        sys.stdout.write('"Program Points","Invariant"')
+
+    for f in args.buggy:
+        sys.stdout.write(',"{}"'.format(f.name))
     sys.stdout.write("\n");
 
     for i in xrange(0, len(ppts)):
         ppt = ppts[i]
         for j in xrange(0, len(invs1[i])):
-            sys.stdout.write('"' + doubleQuotes(ppt) + '","' + doubleQuotes(invs1[i][j]) + '"')
+            if args.no_names:
+                sys.stdout.write("{}_{}".format(i, j))
+            else:
+                sys.stdout.write('"{}","{}"'.format(doubleQuotes(ppt), doubleQuotes(invs1[i][j])))
             for result in results:
                 sys.stdout.write(',' + str(result[i][j]))
             sys.stdout.write("\n")
