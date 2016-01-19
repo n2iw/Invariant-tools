@@ -14,8 +14,10 @@ def loadInvariantToArrays(f):
     index = -1
     new_ppt = False
     ppt = None
+    lineNum = 0
     while True:
         line = f.readline()
+        lineNum += 1
         if line == '': # end of file
             break
         elif line == '\n':
@@ -31,7 +33,7 @@ def loadInvariantToArrays(f):
                 data.append([])
             else:
                 if ppt:
-                    data[index].append(line.rstrip("\n\r"))
+                    data[index].append([lineNum, line.rstrip("\n\r")])
     f.close()
     return (ppts, data)
 
@@ -73,7 +75,7 @@ def compareInvs(ppts, invs1, data2):
         results.append([])
         if ppt in data2:
             for j in xrange(0, len(invs1[i])):
-                inv = invs1[i][j]
+                inv = invs1[i][j][1]
                 if inv in data2[ppt]:
                     if args.use_violates:
                         results[i].append(1)
@@ -98,7 +100,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Compare invariant files and output a matrix in csv format")
     parser.add_argument('fixed', help='(combined)invariant file of fixed version', type=argparse.FileType('r'))
     parser.add_argument('buggy', nargs='+', help='invariant files of buggy versions', type=argparse.FileType('r'))
-    parser.add_argument('-n', '--no_names', action='store_true', help="instead of printing program point and invariant names, print numbers, this option can significantly reduce output file size")
+    parser.add_argument('-n', '--no_names', action='store_true', help="instead of printing program point and invariant names, print line numbers, this option can significantly reduce output file size")
     parser.add_argument('-v', '--use_violates', action='store_true', help="buggy files are violate files instead of invariant files")
     args = parser.parse_args()
     
@@ -111,7 +113,7 @@ if __name__ == '__main__':
         results.append(compareInvs(ppts, invs1, data[-1]))
 
     if args.no_names:
-        sys.stdout.write('"Invariant Number"')
+        sys.stdout.write('"Invariant Line Number"')
     else:
         sys.stdout.write('"Program Points","Invariant"')
 
@@ -123,9 +125,9 @@ if __name__ == '__main__':
         ppt = ppts[i]
         for j in xrange(0, len(invs1[i])):
             if args.no_names:
-                sys.stdout.write("{}_{}".format(i, j))
+                sys.stdout.write("{}".format(invs1[i][j][0]))
             else:
-                sys.stdout.write('"{}","{}"'.format(doubleQuotes(ppt), doubleQuotes(invs1[i][j])))
+                sys.stdout.write('"{}","{}"'.format(doubleQuotes(ppt), doubleQuotes(invs1[i][j][1])))
             for result in results:
                 sys.stdout.write(',' + str(result[i][j]))
             sys.stdout.write("\n")
