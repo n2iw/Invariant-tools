@@ -94,9 +94,12 @@ def compareInvs(ppts, invs1, data2):
 
 #replace double quotes " with two double quotes "", required by csv file format
 def doubleQuotes(s):
+    # return s
     return s.replace('"', '""')
 
 if __name__ == '__main__':
+    DLMTR = ','
+
     parser = argparse.ArgumentParser(description="Compare invariant files and output a matrix in csv format")
     parser.add_argument('fixed', help='(combined)invariant file of fixed version', type=argparse.FileType('r'))
     parser.add_argument('buggy', nargs='+', help='invariant files of buggy versions', type=argparse.FileType('r'))
@@ -112,23 +115,21 @@ if __name__ == '__main__':
         data.append(loadInvariantToDict(fileName))
         results.append(compareInvs(ppts, invs1, data[-1]))
 
-    if args.no_names:
-        sys.stdout.write('"Invariant Line Number"')
-    else:
-        sys.stdout.write('"Program Points","Invariant"')
+    sys.stdout.write('"Invariant Line Number"')
+    if not args.no_names:
+        sys.stdout.write('{0}"Program Points"{0}"Invariant"'.format(DLMTR))
 
     for f in args.buggy:
-        sys.stdout.write(',"{}"'.format(f.name))
+        sys.stdout.write('{}"{}"'.format(DLMTR ,f.name))
     sys.stdout.write("\n");
 
     for i in xrange(0, len(ppts)):
         ppt = ppts[i]
         for j in xrange(0, len(invs1[i])):
-            if args.no_names:
-                sys.stdout.write("{}".format(invs1[i][j][0]))
-            else:
-                sys.stdout.write('"{}","{}"'.format(doubleQuotes(ppt), doubleQuotes(invs1[i][j][1])))
+            sys.stdout.write("{}".format(invs1[i][j][0]))
+            if not args.no_names:
+                sys.stdout.write('{0}"{1}"{0}"{2}"'.format(DLMTR, doubleQuotes(ppt), doubleQuotes(invs1[i][j][1])))
             for result in results:
-                sys.stdout.write(',' + str(result[i][j]))
+                sys.stdout.write('{}{}'.format(DLMTR, result[i][j]))
             sys.stdout.write("\n")
         
