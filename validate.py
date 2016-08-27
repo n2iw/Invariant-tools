@@ -5,8 +5,7 @@
 import os
 import sys
 import argparse
-
-
+import csv
 
 if __name__ == '__main__':
 
@@ -19,8 +18,9 @@ if __name__ == '__main__':
     for inv in args.invs:
         invs.add(inv)
 
-    for line in args.csv:
-        line = line.rstrip()
-        elements = line.split(',')
-        if elements[0] in invs:
-            print line
+    reader = csv.reader(args.csv)
+    writer = csv.writer(sys.stdout)
+
+    for row in reader:
+        if row[0] in invs:
+            writer.writerow(row)
