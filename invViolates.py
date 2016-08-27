@@ -98,8 +98,8 @@ def compareInvs(data1, data2):
     return (data1_only, data2_only, both)
 
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
-        print 'Usage: ' + os.path.basename(sys.argv[0]) + ' FixedVersionInvariantFile BuggyInvariantFile1 [BuggyInvariantFile2...]'
+    if len(sys.argv) != 3:
+        print 'Usage: ' + os.path.basename(sys.argv[0]) + ' FixedVersionInvariantFile BuggyInvariantFile1'
         exit(1)
     if not os.path.isfile(sys.argv[1]):
         print sys.argv[1] + ' is not a file!'
