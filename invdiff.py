@@ -94,8 +94,19 @@ def compareInvs(ppts, invs1, data2):
 
 #replace double quotes " with two double quotes "", required by csv file format
 def doubleQuotes(s):
-    # return s
-    return s.replace('"', '""')
+    # maxLen = 8192
+    # maxLen = 16384
+    # maxLen = 24576
+    # maxLen = 32000
+    maxLen = 32700
+    result = s
+    countQuotes = result.count('"')
+    if len(result) + countQuotes >= maxLen:
+        result = result[:maxLen - 3 - countQuotes] + '###'
+    result = result.replace('"', '""')
+    result = result.replace("\r\n"," ")
+    result = result.replace("\n"," ")
+    return result
 
 if __name__ == '__main__':
     DLMTR = ','
