@@ -1,0 +1,469 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ARGS	smtLang.py	/^ARGS = 'echo'$/;"	v
+ARGS	smtTime.py	/^ARGS = 'echo'$/;"	v
+BFS	callingTests.py	/^def BFS(g, root, s):$/;"	f
+CHICORY_MEM	runClosure.py	/^CHICORY_MEM = '2'$/;"	v
+CHICORY_MEM	smtClosure.py	/^CHICORY_MEM = '3'$/;"	v
+CLASSES	runClosure.py	/^CLASSES = [$/;"	v
+CLASSES	smtClosure.py	/^CLASSES = [$/;"	v
+COMPARABILITY	runClosure.py	/^    COMPARABILITY = ''$/;"	v
+COMPARABILITY	runLang.py	/^COMPARABILITY = ' '$/;"	v
+COMPARABILITY	runMath.py	/^COMPARABILITY = ""$/;"	v
+COMPARABILITY	runTime.py	/^    COMPARABILITY = ''$/;"	v
+COMPARABILITY	smtClosure.py	/^    COMPARABILITY = ''$/;"	v
+COMPARABILITY	smtTime.py	/^    COMPARABILITY = ''$/;"	v
+COMPARABILITY_FILES	runClosure.py	/^COMPARABILITY_FILES = [ ]$/;"	v
+COMPARABILITY_FILES	runTime.py	/^COMPARABILITY_FILES = ['org.joda.time.TestAll.decls-DynComp' , $/;"	v
+COMPARABILITY_FILES	smtClosure.py	/^COMPARABILITY_FILES = [ ]$/;"	v
+COMPARABILITY_FILES	smtTime.py	/^COMPARABILITY_FILES = ['org.joda.time.TestAll.decls-DynComp' , $/;"	v
+COMPILE_CMDS	runClosure.py	/^COMPILE_CMDS = ['ant all-classes-jar']$/;"	v
+COMPILE_CMDS	smtClosure.py	/^COMPILE_CMDS = ['ant jar; ant all-classes-jar']$/;"	v
+CONVERT	runTime.py	/^    CONVERT = args.prefix + 'lib\/joda-convert-1.2.jar'$/;"	v
+CONVERT	smtTime.py	/^    CONVERT = '$PWD\/lib\/joda-convert-1.2.jar'$/;"	v
+CP	runClosure.py	/^        CP = args.prefix + folder + '\/build\/compiler.jar'$/;"	v
+CP	runLang.py	/^        CP = args.prefix + folder + '\/target\/test-classes:'$/;"	v
+CP	runMath.py	/^        CP = args.prefix + folder + '\/target\/test-classes:'$/;"	v
+CP	runTime.py	/^        CP = args.prefix + folder + '\/target\/test-classes:'$/;"	v
+CP	smtClosure.py	/^        CP = '$PWD\/{}\/build\/compiler.jar'.format(version)$/;"	v
+CP	smtLang.py	/^        CP = '$PWD\/{}\/target\/test-classes:'.format(version)$/;"	v
+CP	smtTime.py	/^        CP = '$PWD\/{}\/target\/test-classes:'.format(version)$/;"	v
+DAIKON	runClosure.py	/^    DAIKON = args.prefix + 'lib\/daikon.jar' $/;"	v
+DAIKON	runLang.py	/^    DAIKON = args.prefix + 'lib\/daikon.jar' $/;"	v
+DAIKON	runMath.py	/^DAIKON = PREFIX + 'lib\/daikon.jar' $/;"	v
+DAIKON	runTime.py	/^    DAIKON = args.prefix + 'lib\/daikon.jar' $/;"	v
+DAIKON	smtClosure.py	/^    DAIKON = '$PWD\/lib\/daikon.jar' $/;"	v
+DAIKON	smtLang.py	/^    DAIKON = '$PWD\/lib\/daikon.jar' $/;"	v
+DAIKON	smtTime.py	/^    DAIKON = '$PWD\/lib\/daikon.jar' $/;"	v
+DAIKON_MEM	runClosure.py	/^DAIKON_MEM = '8'$/;"	v
+DAIKON_MEM	smtClosure.py	/^DAIKON_MEM = '8'$/;"	v
+DLMTR	invdiff.py	/^    DLMTR = ','$/;"	v
+FIRST_NUM	checkout.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	runClosure.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	runLang.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	runMath.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	runTime.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	smtClosure.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	smtLang.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	smtTime.py	/^FIRST_NUM = 1$/;"	v
+FIRST_NUM	status.py	/^FIRST_NUM = 1$/;"	v
+FREE	smtLang.py	/^FREE = 'free -h'$/;"	v
+FREE	smtTime.py	/^FREE = 'free -h'$/;"	v
+HOST_NAME	smtLang.py	/^HOST_NAME = 'hostname'$/;"	v
+HOST_NAME	smtTime.py	/^HOST_NAME = 'hostname'$/;"	v
+JUNIT	runClosure.py	/^        JUNIT = args.prefix + folder + '\/lib\/junit.jar'$/;"	v
+JUNIT	runLang.py	/^    JUNIT = args.prefix + 'lib\/junit-4.11.jar'$/;"	v
+JUNIT	runMath.py	/^    JUNIT = args.prefix + 'lib\/junit-4.8.2.jar'$/;"	v
+JUNIT	runTime.py	/^JUNIT = PREFIX + 'lib\/junit-3.8.2.jar'$/;"	v
+JUNIT	smtClosure.py	/^        JUNIT = '$PWD\/{}\/lib\/junit.jar'.format(version)$/;"	v
+JUNIT	smtLang.py	/^JUNIT = '$PWD\/lib\/junit-4.11.jar'$/;"	v
+JUNIT	smtTime.py	/^JUNIT = '$PWD\/lib\/junit-3.8.2.jar'$/;"	v
+LAST_NUM	checkout.py	/^LAST_NUM = 133$/;"	v
+LAST_NUM	runClosure.py	/^LAST_NUM = 133 $/;"	v
+LAST_NUM	runLang.py	/^LAST_NUM = 27 $/;"	v
+LAST_NUM	runMath.py	/^LAST_NUM = 35 $/;"	v
+LAST_NUM	runTime.py	/^LAST_NUM = 60 $/;"	v
+LAST_NUM	smtClosure.py	/^LAST_NUM = 133 $/;"	v
+LAST_NUM	smtLang.py	/^LAST_NUM = 15 $/;"	v
+LAST_NUM	smtTime.py	/^LAST_NUM = 60 $/;"	v
+LAST_NUM	status.py	/^LAST_NUM = 133 $/;"	v
+LOAD_JAVA	smtClosure.py	/^LOAD_JAVA = 'module load java\/1.7.0_25; '$/;"	v
+LOAD_JAVA	smtLang.py	/^LOAD_JAVA = 'module load java\/1.7.0_25'$/;"	v
+LOAD_JAVA	smtTime.py	/^LOAD_JAVA = 'module load java\/1.7.0_25'$/;"	v
+LSCPU	smtLang.py	/^LSCPU = 'lscpu | grep "^CPU(s)"'$/;"	v
+LSCPU	smtTime.py	/^LSCPU = 'lscpu | grep "^CPU(s)"'$/;"	v
+MAIN_PACKAGES	runClosure.py	/^MAIN_PACKAGES = ['com.google.javascript.jscomp', 'com.google.javascript.rhino']$/;"	v
+MAIN_PACKAGES	smtClosure.py	/^MAIN_PACKAGES = ['com.google.javascript.jscomp', 'com.google.javascript.rhino']$/;"	v
+MEM	runLang.py	/^MEM = '8'$/;"	v
+NCPUS	smtClosure.py	/^NCPUS =  3$/;"	v
+OPTIONS	runClosure.py	/^                    OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	runClosure.py	/^                OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	runLang.py	/^                OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	runMath.py	/^                    OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	runTime.py	/^                    OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	smtClosure.py	/^                    OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	smtClosure.py	/^                OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	smtClosure.py	/^        OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	smtLang.py	/^        OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS	smtTime.py	/^        OPTIONS = OPTIONS_TMP.format(invFile)$/;"	v
+OPTIONS_TMP	runClosure.py	/^OPTIONS_TMP = ' --noversion --omit_from_output 0r --no_text_output -o {}'$/;"	v
+OPTIONS_TMP	runLang.py	/^OPTIONS_TMP = " -o {}"$/;"	v
+OPTIONS_TMP	runMath.py	/^OPTIONS_TMP = " --noversion --omit_from_output 0r --no_text_output -o {}"$/;"	v
+OPTIONS_TMP	runTime.py	/^OPTIONS_TMP = " --noversion --omit_from_output 0r --no_text_output -o {}"$/;"	v
+OPTIONS_TMP	smtLang.py	/^OPTIONS_TMP = " --noversion --omit_from_output 0r --no_text_output -o {}"$/;"	v
+OPTIONS_TMP	smtTime.py	/^OPTIONS_TMP = " --noversion --omit_from_output 0r --no_text_output -o {}"$/;"	v
+PACKAGE	smtLang.py	/^PACKAGE = 'org.apache.commons.lang3'$/;"	v
+PACKAGE	smtTime.py	/^PACKAGE = 'org.joda.time'$/;"	v
+PACKAGES	runClosure.py	/^PACKAGES = [$/;"	v
+PACKAGES	runMath.py	/^        PACKAGES = loadPPTs(args.ppt_file)$/;"	v
+PACKAGES	runMath.py	/^PACKAGES = [$/;"	v
+PACKAGES	runTime.py	/^        PACKAGES = loadPPTs(args.ppt_file)$/;"	v
+PACKAGES	runTime.py	/^PACKAGES = [$/;"	v
+PACKAGES	smtClosure.py	/^PACKAGES = [$/;"	v
+PREFIX	checkout.py	/^PREFIX = os.environ['PWD'] + '\/'$/;"	v
+PREFIX	getViolations.py	/^PREFIX = os.environ['PWD']$/;"	v
+PREFIX	runClosure.py	/^PREFIX = os.environ['PWD'] + '\/'$/;"	v
+PREFIX	runLang.py	/^PREFIX = os.environ['PWD'] + '\/'$/;"	v
+PREFIX	runMath.py	/^PREFIX = '\/Users\/james\/Experiments\/Math\/'$/;"	v
+PREFIX	runTime.py	/^PREFIX = os.environ['PWD'] + '\/'$/;"	v
+PROJECT	checkout.py	/^PROJECT = 'Closure'$/;"	v
+QUEUE	smtClosure.py	/^QUEUE = 'u2-grid'$/;"	v
+SAMPLE	runLang.py	/^SAMPLE = ' '$/;"	v
+SAMPLE	smtLang.py	/^SAMPLE = ' '$/;"	v
+SAMPLE	smtTime.py	/^SAMPLE = ' '$/;"	v
+TARGET_MEM	runClosure.py	/^TARGET_MEM = '6'$/;"	v
+TARGET_MEM	smtClosure.py	/^TARGET_MEM = '5'$/;"	v
+TEST_CLASS	runClosure.py	/^TEST_CLASS = ' daikonTestAll'$/;"	v
+TEST_CLASS	runLang.py	/^TEST_CLASS = ' Main'$/;"	v
+TEST_CLASS	runMath.py	/^TEST_CLASS = ' daikonTestEssential'$/;"	v
+TEST_CLASS	runTime.py	/^TEST_CLASS = ' daikonTest'$/;"	v
+TEST_CLASS	smtClosure.py	/^TEST_CLASS = ' daikonTestAll'$/;"	v
+TEST_CLASS	smtLang.py	/^TEST_CLASS = ' Main'$/;"	v
+TEST_CLASS	smtTime.py	/^TEST_CLASS = ' daikonTest'$/;"	v
+TEST_FILE	runClosure.py	/^TEST_FILE = 'daikonTestAll.java'$/;"	v
+TEST_FILE	runLang.py	/^TEST_FILE = 'Main.java'$/;"	v
+TEST_FILE	runMath.py	/^TEST_FILE = 'daikonTestEssential.java'$/;"	v
+TEST_FILE	runTime.py	/^TEST_FILE = 'daikonTest.java'$/;"	v
+TEST_FILE	smtClosure.py	/^TEST_FILE = 'daikonTestAll.java'$/;"	v
+VISIBILITY	smtClosure.py	/^VISIBILITY = ' '$/;"	v
+WALL_TIME	smtClosure.py	/^WALL_TIME =  72 * 60$/;"	v
+argparse	callingTests.py	/^import argparse$/;"	i
+argparse	checkout.py	/^import argparse$/;"	i
+argparse	extractCG.py	/^import argparse$/;"	i
+argparse	getViolations.py	/^import argparse$/;"	i
+argparse	infoBugs.py	/^import argparse$/;"	i
+argparse	invcount.py	/^import argparse$/;"	i
+argparse	invdiff.py	/^import argparse$/;"	i
+argparse	runClosure.py	/^import argparse$/;"	i
+argparse	runLang.py	/^import argparse$/;"	i
+argparse	runMath.py	/^import argparse$/;"	i
+argparse	runTime.py	/^import argparse$/;"	i
+argparse	smtClosure.py	/^import argparse$/;"	i
+argparse	smtLang.py	/^import argparse$/;"	i
+argparse	smtTime.py	/^import argparse$/;"	i
+argparse	status.py	/^import argparse$/;"	i
+argparse	validate.py	/^import argparse$/;"	i
+args	checkout.py	/^    args = parser.parse_args()$/;"	v
+args	infoBugs.py	/^    args = parser.parse_args()$/;"	v
+args	invdiff.py	/^    args = parser.parse_args()$/;"	v
+args	runClosure.py	/^    args = parser.parse_args()$/;"	v
+args	runLang.py	/^    args = parser.parse_args()$/;"	v
+args	runMath.py	/^    args = parser.parse_args()$/;"	v
+args	runTime.py	/^    args = parser.parse_args()$/;"	v
+args	smtClosure.py	/^    args = parser.parse_args()$/;"	v
+args	smtLang.py	/^    args = parser.parse_args()$/;"	v
+args	smtTime.py	/^    args = parser.parse_args()$/;"	v
+args	status.py	/^    args = parser.parse_args()$/;"	v
+args	validate.py	/^    args = parser.parse_args()$/;"	v
+base	diff_fix_tests.py	/^base = sys.argv[1]$/;"	v
+base	diff_fixes.py	/^base = sys.argv[1]$/;"	v
+base_version	diff_fix_tests.py	/^base_version = "fix_" + str(base)$/;"	v
+base_version	diff_fixes.py	/^base_version = "fix_" + str(base)$/;"	v
+buggy_folder	diff_bugs.py	/^    buggy_folder = "buggy_" + str(i)$/;"	v
+check	callingTests.py	/^def check(root, s):$/;"	f
+checkCall	extractCG.py	/^def checkCall(g1, g2):$/;"	f
+choices	runClosure.py	/^            choices=['copy', 'compile', 'run', 'frontend', 'daikon', 'split', 'splitDaikon', 'online', 'print', 'clean'])$/;"	v
+choices	runLang.py	/^            choices=['copy', 'compile', 'run','runFrontend', 'runDaikonInline', 'runDaikon', 'runDaikonOnline', 'print', 'clean'])$/;"	v
+choices	runMath.py	/^            choices=['copy', 'compile', 'run', 'runFrontend', 'runDaikon', 'runDaikonOnline', 'print', 'clean'])$/;"	v
+choices	runTime.py	/^            choices=['copy', 'compile', 'run', 'runFrontend', 'runDaikon', 'runDaikonOnline', 'print', 'clean'])$/;"	v
+cmd	checkout.py	/^        cmd = "defects4j checkout -p {} ".format(PROJECT)$/;"	v
+cmd	diff_bugs.py	/^    cmd = "diff -r " $/;"	v
+cmd	diff_fix_tests.py	/^    cmd = "diff -r " $/;"	v
+cmd	diff_fix_tests.py	/^cmd = "mkdir -p " + diff_dir$/;"	v
+cmd	diff_fixes.py	/^    cmd = "diff -r " $/;"	v
+cmd	diff_fixes.py	/^cmd = "mkdir -p " + diff_dir$/;"	v
+cmd	runClosure.py	/^                    cmd = 'java -d64 -Xmx{}g -cp '.format(args.daikon_memory)$/;"	v
+cmd	runClosure.py	/^                    cmd = 'java -d64 -Xmx{}g -cp'.format(args.chicory_memory)$/;"	v
+cmd	runClosure.py	/^                    cmd = 'java -d64 -Xmx{}g -cp'.format(args.daikon_memory)$/;"	v
+cmd	runClosure.py	/^                    cmd = 'rm ' + dtraceFile$/;"	v
+cmd	runClosure.py	/^                cmd = 'cp ..\/{} test\/'.format(TEST_FILE)$/;"	v
+cmd	runClosure.py	/^                cmd = 'java -d64 -Xmx{}g -cp'.format(args.chicory_memory)$/;"	v
+cmd	runClosure.py	/^                cmd = 'java -d64 -Xmx{}g -cp'.format(args.daikon_memory)$/;"	v
+cmd	runClosure.py	/^                cmd = 'java -d64 -Xmx{}g -cp'.format(args.target_memory)$/;"	v
+cmd	runCompare.py	/^        cmd = 'invViolates.py '$/;"	v
+cmd	runLang.py	/^                    cmd = 'rm ' + dtraceFile$/;"	v
+cmd	runLang.py	/^                cmd = 'cp ..\/{} src\/test\/java\/'.format(TEST_FILE)$/;"	v
+cmd	runLang.py	/^                cmd = 'java -d64 -Xmx{}g -cp '.format(args.memory)$/;"	v
+cmd	runLang.py	/^                cmd = 'java -d64 -Xmx{}g -cp'.format(args.memory)$/;"	v
+cmd	runMath.py	/^                        cmd = 'rm ' + dtraceFile$/;"	v
+cmd	runMath.py	/^                    cmd = 'java -d64 -Xmx8g -cp '$/;"	v
+cmd	runMath.py	/^                    cmd = 'java -d64 -Xmx8g -cp'$/;"	v
+cmd	runMath.py	/^                cmd = 'cp ..\/{} src\/test\/java\/'.format(TEST_FILE)$/;"	v
+cmd	runMath.py	/^                cmd = 'java -d64 -Xmx8g -cp'$/;"	v
+cmd	runTime.py	/^                        cmd = 'rm ' + dtraceFile$/;"	v
+cmd	runTime.py	/^                    cmd = 'java -d64 -Xmx8g -cp '$/;"	v
+cmd	runTime.py	/^                    cmd = 'java -d64 -Xmx8g -cp'$/;"	v
+cmd	runTime.py	/^                cmd = 'cp ..\/{} src\/test\/java\/'.format(TEST_FILE)$/;"	v
+cmd	runTime.py	/^                cmd = 'java -d64 -Xmx8g -cp'$/;"	v
+cmd	smtClosure.py	/^                        cmd = 'rm ' + f$/;"	v
+cmd	smtClosure.py	/^                    cmd = '{}java -d64 -Xmx{}g -cp '.format(loadJava, args.daikon_memory)$/;"	v
+cmd	smtClosure.py	/^                    cmd = '{}java -d64 -Xmx{}g -cp'.format(loadJava, args.chicory_memory)$/;"	v
+cmd	smtClosure.py	/^                    cmd = '{}java -d64 -Xmx{}g -cp'.format(loadJava, args.daikon_memory)$/;"	v
+cmd	smtClosure.py	/^                cmd = '{}java -d64 -Xmx{}g -cp'.format(loadJava, args.daikon_memory)$/;"	v
+cmd	smtClosure.py	/^            cmd = 'cp {} {}\/test\/'.format(TEST_FILE, version)$/;"	v
+cmd	smtClosure.py	/^            cmd = '{}java -d64 -Xmx{}g -cp'.format(loadJava, args.daikon_memory)$/;"	v
+cmd	smtClosure.py	/^            cmd = '{}java -d64 -Xmx{}g -cp'.format(loadJava, args.target_memory)$/;"	v
+cmd	smtClosure.py	/^        cmd = '{}java -d64 -Xmx{}g -cp'.format(loadJava, args.chicory_memory)$/;"	v
+cmd	smtLang.py	/^        cmd = 'java -d64 -Xmx{}g -cp'.format(args.target_mem)$/;"	v
+cmd	smtTime.py	/^        cmd = 'java -d64 -Xmx{}g -cp'.format(args.target_mem)$/;"	v
+cmds	runClosure.py	/^        cmds = []$/;"	v
+cmds	runCompare.py	/^        cmds = []$/;"	v
+cmds	runLang.py	/^        cmds = []$/;"	v
+cmds	runMath.py	/^        cmds = []$/;"	v
+cmds	runTime.py	/^        cmds = []$/;"	v
+cmds	smtClosure.py	/^        cmds = []$/;"	v
+cmds	smtLang.py	/^        cmds = []$/;"	v
+cmds	smtTime.py	/^        cmds = []$/;"	v
+compareInvs	invViolates.py	/^def compareInvs(data1, data2):$/;"	f
+compareInvs	invdiff.py	/^def compareInvs(ppts, invs1, data2):$/;"	f
+compareInvs2	invcount.py	/^def compareInvs2(ppts, invs1, data2):$/;"	f
+compare_version	diff_fix_tests.py	/^    compare_version = "fix_" + str(i)$/;"	v
+compare_version	diff_fixes.py	/^    compare_version = "fix_" + str(i)$/;"	v
+csv	validate.py	/^import csv$/;"	i
+data	invdiff.py	/^    data = []$/;"	v
+datetime	header.py	/^import datetime$/;"	i
+datetime	runClosure.py	/^import datetime$/;"	i
+datetime	runCompare.py	/^import datetime$/;"	i
+datetime	runLang.py	/^import datetime$/;"	i
+datetime	runMath.py	/^import datetime$/;"	i
+datetime	runTime.py	/^import datetime$/;"	i
+datetime	run_lib.py	/^import datetime$/;"	i
+datetime	smtLang.py	/^import datetime$/;"	i
+datetime	smtTime.py	/^import datetime$/;"	i
+default	checkout.py	/^            default=PREFIX)$/;"	v
+default	runClosure.py	/^            default=PREFIX)$/;"	v
+default	runLang.py	/^            default=PREFIX)$/;"	v
+default	runMath.py	/^            default=PREFIX)$/;"	v
+default	runTime.py	/^            default=PREFIX)$/;"	v
+deque	callingTests.py	/^from collections import deque$/;"	i
+diff_dir	diff_fix_tests.py	/^diff_dir = "diff\/fix_test_" + str(base)$/;"	v
+diff_dir	diff_fixes.py	/^diff_dir = "diff\/fix_" + str(base)$/;"	v
+diff_file	diff_bugs.py	/^    diff_file = "results\/diff\/buggy_" + str(i) + '.diff'$/;"	v
+diff_file	diff_fix_tests.py	/^    diff_file = diff_dir + "\/" + str(base) + '_' + str(i) + '.diff'$/;"	v
+diff_file	diff_fixes.py	/^    diff_file = diff_dir + "\/" + str(base) + '_' + str(i) + '.diff'$/;"	v
+doubleQuotes	extractCG.py	/^def doubleQuotes(s):$/;"	f
+doubleQuotes	invcount.py	/^def doubleQuotes(s):$/;"	f
+doubleQuotes	invdiff.py	/^def doubleQuotes(s):$/;"	f
+dtraceFile	runClosure.py	/^                    dtraceFile = '{}_{}_{}.dtrace.gz'.format(kind, i, main_ppt)$/;"	v
+dtraceFile	runClosure.py	/^                dtraceFile = '{}_{}.dtrace.gz'.format(kind, i)$/;"	v
+dtraceFile	runLang.py	/^                dtraceFile = '{}_{}.dtrace.gz'.format(kind, i)$/;"	v
+dtraceFile	runMath.py	/^                    dtraceFile = '{}_{}_{}.dtrace.gz'.format(kind, i, ppt)$/;"	v
+dtraceFile	runTime.py	/^                    dtraceFile = '{}_{}_{}.dtrace.gz'.format(kind, i, ppt)$/;"	v
+dtraceFile	smtClosure.py	/^                    dtraceFile = '{}_{}_{}.dtrace.gz'.format(kind, i, main_ppt)$/;"	v
+dtraceFile	smtClosure.py	/^        dtraceFile = '{}_{}.dtrace.gz'.format(kind, i)$/;"	v
+dtraceFile	smtLang.py	/^        dtraceFile = '{}_{}.dtrace.gz'.format(kind, i)$/;"	v
+dtraceFile	smtTime.py	/^        dtraceFile = '{}_{}.dtrace.gz'.format(kind, i)$/;"	v
+execute	smtClosure.py	/^            execute = '.\/{}.py'.format(version)$/;"	v
+execute_command	gdown.pl	/^sub execute_command() {$/;"	s
+files	smtClosure.py	/^            files = os.listdir(os.environ["PWD"])$/;"	v
+filesSet	smtClosure.py	/^            filesSet = set(files)$/;"	v
+first	runCompare.py	/^    first = int(sys.argv[1])$/;"	v
+fix_folder	diff_bugs.py	/^    fix_folder = "fix_" + str(i)$/;"	v
+folder	checkout.py	/^        folder = "{}_{}".format(kind, str(i))$/;"	v
+folder	runClosure.py	/^        folder = '{}_{}'.format(kind, i)$/;"	v
+folder	runCompare.py	/^    folder = 'results'$/;"	v
+folder	runLang.py	/^        folder = '{}_{}'.format(kind, i)$/;"	v
+folder	runMath.py	/^        folder = '{}_{}'.format(kind, i)$/;"	v
+folder	runTime.py	/^        folder = '{}_{}'.format(kind, i)$/;"	v
+generate_py	smtClosure.py	/^def generate_py(version, cmds, local=False, args=''):$/;"	f
+generate_script	smtLang.py	/^def generate_script(version, cmds, dry_run):$/;"	f
+generate_script	smtTime.py	/^def generate_script(version, cmds, dry_run):$/;"	f
+grep_cmd	status.py	/^        grep_cmd = 'grep -l {}.py 0000*\/*\/*.sh'.format(version)$/;"	v
+include	smtClosure.py	/^            include = '.\/{}'.format(dtraceFile)$/;"	v
+include	smtClosure.py	/^        include = '.\/{}\/'.format(version)$/;"	v
+info_bugs	infoBugs.py	/^def info_bugs(project, num):$/;"	f
+inv1	invViolates.py	/^    inv1 = loadInvariantToDict(sys.argv[1])$/;"	v
+inv2	invViolates.py	/^    inv2 = loadInvariantToDict(sys.argv[2])$/;"	v
+invFile	runClosure.py	/^                    invFile = '{}_{}_{}.inv.gz'.format(kind, i, main_ppt)$/;"	v
+invFile	runClosure.py	/^                invFile = '{}_{}.inv.gz'.format(kind, i)$/;"	v
+invFile	runLang.py	/^                invFile = '{}_{}.inv.gz'.format(kind, i)$/;"	v
+invFile	runMath.py	/^                    invFile = '{}_{}_{}.inv.gz'.format(kind, i, ppt)$/;"	v
+invFile	runTime.py	/^                    invFile = '{}_{}_{}.inv.gz'.format(kind, i, ppt)$/;"	v
+invFile	smtClosure.py	/^                    invFile = '{}_{}_{}.inv.gz'.format(kind, i, main_ppt)$/;"	v
+invFile	smtClosure.py	/^                    invFile = f.replace('dtrace.gz', 'inv.gz')$/;"	v
+invFile	smtClosure.py	/^                invFile = '{}_{}_{}.inv.gz'.format(kind, i, main_ppt)$/;"	v
+invFile	smtClosure.py	/^        invFile = '{}_{}.inv.gz'.format(kind, i)$/;"	v
+invFile	smtLang.py	/^        invFile = '{}_{}.inv.gz'.format(kind, i)$/;"	v
+invFile	smtTime.py	/^        invFile = '{}_{}.inv.gz'.format(kind, i)$/;"	v
+invs	validate.py	/^    invs = set()$/;"	v
+job	status.py	/^                    job = subprocess.Popen(status_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)$/;"	v
+jobID	status.py	/^            jobID = out[:8]$/;"	v
+jobStarted	footer2.py	/^    jobStarted = time.time()$/;"	v
+kind	checkout.py	/^            kind = 'buggy'$/;"	v
+kind	checkout.py	/^            kind = 'fix'$/;"	v
+kind	runClosure.py	/^        kind = 'buggy'$/;"	v
+kind	runClosure.py	/^        kind = 'fix'$/;"	v
+kind	runLang.py	/^        kind = 'buggy'$/;"	v
+kind	runLang.py	/^        kind = 'fix'$/;"	v
+kind	runMath.py	/^        kind = 'buggy'$/;"	v
+kind	runMath.py	/^        kind = 'fix'$/;"	v
+kind	runTime.py	/^        kind = 'buggy'$/;"	v
+kind	runTime.py	/^        kind = 'fix'$/;"	v
+kind	smtClosure.py	/^        kind = 'buggy'$/;"	v
+kind	smtClosure.py	/^        kind = 'fix'$/;"	v
+kind	smtLang.py	/^        kind = 'buggy'$/;"	v
+kind	smtLang.py	/^        kind = 'fix'$/;"	v
+kind	smtTime.py	/^        kind = 'buggy'$/;"	v
+kind	smtTime.py	/^        kind = 'fix'$/;"	v
+kind	status.py	/^        kind = 'buggy'$/;"	v
+kind	status.py	/^        kind = 'fix'$/;"	v
+kind_group	checkout.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	runClosure.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	runLang.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	runMath.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	runTime.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	smtClosure.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	smtLang.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	smtTime.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+kind_group	status.py	/^    kind_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+last	runCompare.py	/^    last = int(sys.argv[2])$/;"	v
+loadGraph	callgraph.py	/^def loadGraph(f):$/;"	f
+loadGraphWithCount	callgraph.py	/^def loadGraphWithCount(f):$/;"	f
+loadInvariant	invclean.py	/^def loadInvariant(fileName):$/;"	f
+loadInvariant	invextract.py	/^def loadInvariant(fileName):$/;"	f
+loadInvariantToArrays	invViolates.py	/^def loadInvariantToArrays(fileName):$/;"	f
+loadInvariantToArrays	invcount.py	/^def loadInvariantToArrays(f):$/;"	f
+loadInvariantToArrays	invdiff.py	/^def loadInvariantToArrays(f):$/;"	f
+loadInvariantToDict	invViolates.py	/^def loadInvariantToDict(fileName):$/;"	f
+loadInvariantToDict	invcount.py	/^def loadInvariantToDict(f):$/;"	f
+loadInvariantToDict	invdiff.py	/^def loadInvariantToDict(f):$/;"	f
+loadInvariantToDict	invmerge.py	/^def loadInvariantToDict(fileName):$/;"	f
+loadJava	smtClosure.py	/^        loadJava = ''$/;"	v
+loadJava	smtClosure.py	/^        loadJava = LOAD_JAVA$/;"	v
+loadList	callgraph.py	/^def loadList(f):$/;"	f
+loadPPTs	run_lib.py	/^def loadPPTs(pFile):$/;"	f
+loadRestricts	run_lib.py	/^def loadRestricts(rFile):$/;"	f
+loadStaticGraph	callgraph.py	/^def loadStaticGraph(f):$/;"	f
+main	getViolations.py	/^def main():$/;"	f
+mergeInvs	invmerge.py	/^def mergeInvs(data1, data2):$/;"	f
+omit_ppt_options	runClosure.py	/^                    omit_ppt_options = omit_ppt_template.format(omit_ppts[:-1])$/;"	v
+omit_ppt_options	runClosure.py	/^omit_ppt_options = " "$/;"	v
+omit_ppt_options	runLang.py	/^omit_ppt_options = ' '$/;"	v
+omit_ppt_options	runMath.py	/^omit_ppt_options = ''$/;"	v
+omit_ppt_options	smtClosure.py	/^                    omit_ppt_options = omit_ppt_template.format(omit_ppts[:-1])$/;"	v
+omit_ppt_options	smtClosure.py	/^                omit_ppt_options = omit_ppt_template.format(omit_ppts[:-1])$/;"	v
+omit_ppt_options	smtLang.py	/^omit_ppt_options = ' '$/;"	v
+omit_ppt_options	smtTime.py	/^omit_ppt_options = ' '$/;"	v
+omit_ppts	runClosure.py	/^                    omit_ppts = ''$/;"	v
+omit_ppts	smtClosure.py	/^                    omit_ppts = 'Test\\\\W|'$/;"	v
+omit_ppts	smtClosure.py	/^                omit_ppts = 'Test\\\\W|'$/;"	v
+os	callingTests.py	/^import os$/;"	i
+os	checkout.py	/^import sys, os$/;"	i
+os	diff_bugs.py	/^import sys, os$/;"	i
+os	diff_fix_tests.py	/^import sys, os$/;"	i
+os	diff_fixes.py	/^import sys, os$/;"	i
+os	extractCG.py	/^import os$/;"	i
+os	getViolations.py	/^import os, sys$/;"	i
+os	infoBugs.py	/^import os$/;"	i
+os	invViolates.py	/^import os$/;"	i
+os	invclean.py	/^import os$/;"	i
+os	invcount.py	/^import os$/;"	i
+os	invdiff.py	/^import os$/;"	i
+os	invextract.py	/^import os$/;"	i
+os	invmerge.py	/^import os$/;"	i
+os	runClosure.py	/^import os$/;"	i
+os	runCompare.py	/^import os, sys$/;"	i
+os	runLang.py	/^import os$/;"	i
+os	runTime.py	/^import os$/;"	i
+os	run_lib.py	/^import os$/;"	i
+os	smtClosure.py	/^import os$/;"	i
+os	smtLang.py	/^import os$/;"	i
+os	smtTime.py	/^import os$/;"	i
+os	status.py	/^import os$/;"	i
+os	validate.py	/^import os$/;"	i
+out	status.py	/^            out = subprocess.check_output(grep_cmd, shell=True)$/;"	v
+parser	checkout.py	/^    parser = argparse.ArgumentParser(description="Checkout programs of Closure")$/;"	v
+parser	infoBugs.py	/^    parser = argparse.ArgumentParser("Get bug infomation for Defect4j project")$/;"	v
+parser	invdiff.py	/^    parser = argparse.ArgumentParser(description="Compare invariant files and output a matrix in csv format")$/;"	v
+parser	runClosure.py	/^    parser = argparse.ArgumentParser(description="Run tasks on Closure project")$/;"	v
+parser	runLang.py	/^    parser = argparse.ArgumentParser(description="Run tasks on Lang project")$/;"	v
+parser	runMath.py	/^    parser = argparse.ArgumentParser(description="Run tasks on Math project")$/;"	v
+parser	runTime.py	/^    parser = argparse.ArgumentParser(description="Run tasks on Time project")$/;"	v
+parser	smtClosure.py	/^    parser = argparse.ArgumentParser(description="Run tasks on project 'Closure'")$/;"	v
+parser	smtLang.py	/^    parser = argparse.ArgumentParser(description="Run tasks on Lang project")$/;"	v
+parser	smtTime.py	/^    parser = argparse.ArgumentParser(description="Run tasks on Time project")$/;"	v
+parser	status.py	/^    parser = argparse.ArgumentParser(description="Find programs that needs to be run")$/;"	v
+parser	validate.py	/^    parser = argparse.ArgumentParser(description="Validates a set of invariant numbers against a csv file")$/;"	v
+ppt	invdiff.py	/^        ppt = ppts[i]$/;"	v
+ppt	runMath.py	/^                    ppt = PACKAGES[j]$/;"	v
+ppt	runTime.py	/^                    ppt = PACKAGES[j]$/;"	v
+ppt_filter	runMath.py	/^            ppt_filter = set(args.exclude_ppts)$/;"	v
+ppt_filter	runMath.py	/^        ppt_filter = set()$/;"	v
+ppt_filter	runTime.py	/^            ppt_filter = set(args.exclude_ppts)$/;"	v
+ppt_filter	runTime.py	/^        ppt_filter = set()$/;"	v
+ppt_group	runMath.py	/^    ppt_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+ppt_group	runTime.py	/^    ppt_group = parser.add_mutually_exclusive_group(required=True)$/;"	v
+ppts	runClosure.py	/^ppts = ''$/;"	v
+ppts	runMath.py	/^        ppts = [0] $/;"	v
+ppts	runMath.py	/^        ppts = [args.select_ppt]$/;"	v
+ppts	runMath.py	/^        ppts = set(xrange(0, len(PACKAGES))) - set(ppt_filter) $/;"	v
+ppts	runTime.py	/^        ppts = [0] $/;"	v
+ppts	runTime.py	/^        ppts = [args.select_ppt]$/;"	v
+ppts	runTime.py	/^        ppts = set(xrange(0, len(PACKAGES))) - set(ppt_filter) $/;"	v
+ppts	smtClosure.py	/^    ppts = ''$/;"	v
+printGraph	extractCG.py	/^def printGraph(g):$/;"	f
+printGraphCount	extractCG.py	/^def printGraphCount(g):$/;"	f
+printInv	invclean.py	/^def printInv(data):$/;"	f
+printInv	invextract.py	/^def printInv(data):$/;"	f
+printInvs	invViolates.py	/^def printInvs(data):$/;"	f
+printInvs	invmerge.py	/^def printInvs(data):$/;"	f
+re	status.py	/^import re$/;"	i
+reader	validate.py	/^    reader = csv.reader(args.csv)$/;"	v
+result	status.py	/^                    result = re.search(r'(Running|Pending)', out, re.IGNORECASE & re.MULTILINE)$/;"	v
+results	invdiff.py	/^    results = []$/;"	v
+run_in_folder	run_lib.py	/^def run_in_folder(folder, commands, dry_run):$/;"	f
+select_ppt_option	runClosure.py	/^                    select_ppt_option = select_ppt_template.format("^" + main_ppt)$/;"	v
+select_ppt_option	runClosure.py	/^select_ppt_option = select_ppt_template.format(ppts[:-1])$/;"	v
+select_ppt_option	runLang.py	/^select_ppt_option = ' '$/;"	v
+select_ppt_option	smtClosure.py	/^                    select_ppt_option = select_ppt_template.format("^" + main_ppt)$/;"	v
+select_ppt_option	smtClosure.py	/^                select_ppt_option = select_ppt_template.format("^" + main_ppt)$/;"	v
+select_ppt_option	smtClosure.py	/^    select_ppt_option = select_ppt_template.format(ppts[:-1])$/;"	v
+startTime	footer2.py	/^startTime = time.time()$/;"	v
+status	status.py	/^                    status = result.group(0)$/;"	v
+status_cmd	status.py	/^        status_cmd = [ "submit", "--status" ]$/;"	v
+submit	smtClosure.py	/^def submit(version, queue, ncpus, wall_time, dry_run, include):$/;"	f
+submit	smtLang.py	/^def submit(version, queue, ncpus, wall_time, dry_run):$/;"	f
+submit	smtTime.py	/^def submit(version, queue, ncpus, wall_time, dry_run):$/;"	f
+subprocess	header.py	/^import subprocess$/;"	i
+subprocess	smtClosure.py	/^import subprocess$/;"	i
+subprocess	status.py	/^import subprocess$/;"	i
+sys	callingTests.py	/^import sys$/;"	i
+sys	checkout.py	/^import sys, os$/;"	i
+sys	diff_bugs.py	/^import sys, os$/;"	i
+sys	diff_fix_tests.py	/^import sys, os$/;"	i
+sys	diff_fixes.py	/^import sys, os$/;"	i
+sys	extractCG.py	/^import sys$/;"	i
+sys	getViolations.py	/^import os, sys$/;"	i
+sys	invViolates.py	/^import sys$/;"	i
+sys	invclean.py	/^import sys$/;"	i
+sys	invcount.py	/^import sys$/;"	i
+sys	invdiff.py	/^import sys$/;"	i
+sys	invextract.py	/^import sys$/;"	i
+sys	invmerge.py	/^import sys$/;"	i
+sys	runCompare.py	/^import os, sys$/;"	i
+sys	smtClosure.py	/^import sys$/;"	i
+sys	smtLang.py	/^import sys$/;"	i
+sys	smtTime.py	/^import sys$/;"	i
+sys	status.py	/^import sys$/;"	i
+sys	validate.py	/^import sys$/;"	i
+time	header.py	/^import time$/;"	i
+time	run_lib.py	/^import time$/;"	i
+txtFile	runClosure.py	/^                    txtFile = '{}_{}.txt'.format(kind, i)$/;"	v
+txtFile	smtClosure.py	/^                    txtFile = '{}_{}.txt'.format(kind, i)$/;"	v
+version	checkout.py	/^            version = 'b'$/;"	v
+version	checkout.py	/^            version = 'f'$/;"	v
+version	smtClosure.py	/^        version = '{}_{}'.format(kind, i)$/;"	v
+version	smtLang.py	/^        version = '{}_{}'.format(kind, i)$/;"	v
+version	smtTime.py	/^        version = '{}_{}'.format(kind, i)$/;"	v
+version	status.py	/^        version = '{}_{}'.format(kind, i)$/;"	v
+versions	runClosure.py	/^    versions = range(FIRST_NUM, LAST_NUM + 1)$/;"	v
+versions	runLang.py	/^    versions = xrange(FIRST_NUM, LAST_NUM + 1)$/;"	v
+versions	runMath.py	/^        versions = loadRestricts(args.restrict_file)$/;"	v
+versions	runMath.py	/^        versions = xrange(FIRST_NUM, LAST_NUM + 1)$/;"	v
+versions	runTime.py	/^        versions = loadRestricts(args.restrict_file)$/;"	v
+versions	runTime.py	/^        versions = xrange(FIRST_NUM, LAST_NUM + 1)$/;"	v
+writer	validate.py	/^    writer = csv.writer(sys.stdout)$/;"	v
