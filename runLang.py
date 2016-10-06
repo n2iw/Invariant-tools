@@ -13,7 +13,7 @@ PREFIX = os.environ['PWD'] + '/'
 SAMPLE = ' '
 COMPARABILITY = ' '
 OPTIONS_TMP = " -o {}"
-TEST_CLASS = ' Main'
+TEST_CLASS = ' MainTest'
 TEST_FILE = 'Main.java'
 MEM = '8'
 
