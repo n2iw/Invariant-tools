@@ -663,7 +663,7 @@ if __name__ == '__main__':
 
             include = './{}'.format(dtraceFile)
         elif args.task == 'split':
-                #do run frontend and daikon on each packages
+                #do run frontend and daikon on each classe
                 for main_ppt in CLASSES:
                     # print(main_ppt)
                     dtraceFile = '{}_{}_{}.dtrace.gz'.format(kind, i, main_ppt)
