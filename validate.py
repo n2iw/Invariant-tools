@@ -22,7 +22,8 @@ if __name__ == '__main__':
     reader = csv.reader(args.csv)
     writer = csv.writer(sys.stdout)
 
-    lineNum = -1
+    writer.writerow(reader.next())
+    lineNum = 0
     for row in reader:
         if args.adil:
             if lineNum in invs:
