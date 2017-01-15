@@ -13,8 +13,8 @@ PREFIX = os.environ['PWD'] + '/'
 SAMPLE = ' '
 COMPARABILITY = ' '
 OPTIONS_TMP = " -o {}"
-TEST_CLASS = ' MainTest'
-TEST_FILE = 'Main.java'
+TEST_CLASS = ' daikonTest'
+TEST_FILE = 'daikonTest.java'
 MEM = '8'
 
 omit_ppt_options = ' '
@@ -60,6 +60,7 @@ if __name__ == '__main__':
 
     DAIKON = args.prefix + 'lib/daikon.jar' 
     JUNIT = args.prefix + 'lib/junit-4.11.jar'
+    HAMCREST = args.prefix + 'lib/hamcrest-core-1.1.jar'
 
     for i in xrange(args.first, args.last + 1):
         print '=' * 75
@@ -85,7 +86,7 @@ if __name__ == '__main__':
             elif task == 'run':
                 #run directly
                 cmd = 'java -d64 -Xmx{}g -cp'.format(args.memory)
-                cmd += ' {}:'.format(JUNIT)
+                cmd += ' {}:{}:'.format(JUNIT, HAMCREST)
                 cmd += CP
                 cmd += TEST_CLASS
                 cmds.append(cmd)
@@ -95,7 +96,7 @@ if __name__ == '__main__':
                 dtraceOutput = ' --dtrace-file=' + dtraceFile
 
                 cmd = 'java -d64 -Xmx{}g -cp'.format(args.memory)
-                cmd += ' {}:{}:'.format(DAIKON, JUNIT)
+                cmd += ' {}:{}:{}:'.format(DAIKON, JUNIT, HAMCREST)
                 cmd += CP
                 cmd += ' daikon.Chicory '
                 cmd += select_ppt_option  
@@ -111,7 +112,7 @@ if __name__ == '__main__':
                 dtraceOutput = ' --dtrace-file=' + dtraceFile
 
                 cmd = 'java -d64 -Xmx{}g -cp'.format(args.memory)
-                cmd += ' {}:{}:'.format(DAIKON, JUNIT)
+                cmd += ' {}:{}:{}:'.format(DAIKON, JUNIT, HAMCREST)
                 cmd += CP
                 cmd += ' daikon.Chicory --daikon '
                 cmd += select_ppt_option  
@@ -141,7 +142,7 @@ if __name__ == '__main__':
                 OPTIONS = OPTIONS_TMP.format(invFile)
 
                 cmd = 'java -d64 -Xmx{}g -cp'.format(args.memory)
-                cmd += ' {}:{}:'.format(DAIKON, JUNIT)
+                cmd += ' {}:{}:{}:'.format(DAIKON, JUNIT, HAMCREST)
                 cmd += CP
                 cmd += ' daikon.Chicory'
                 cmd += select_ppt_option

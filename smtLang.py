@@ -12,12 +12,13 @@ JUNIT = '$PWD/lib/junit-4.11.jar'
 # SAMPLE = ' --sample-start=100'
 SAMPLE = ' '
 OPTIONS_TMP = ' --noversion --omit_from_output 0r --no_text_output --config_option daikon.FileIO.count_lines=false -o {}'
-TEST_CLASS = ' MainTest'
+TEST_CLASS = ' daikonTest'
 PACKAGE = 'org.apache.commons.lang3'
 ARGS = 'echo'
 for a in sys.argv:
     ARGS += ' ' + a
-LOAD_JAVA = 'module load java/1.7.0_25'
+# LOAD_JAVA = 'module load java/1.7.0_25'
+LOAD_JAVA = 'module load java/1.8.0_45'
 HOST_NAME = 'hostname'
 LSCPU = 'lscpu | grep "^CPU(s)"'
 FREE = 'free -h'
@@ -27,7 +28,7 @@ omit_ppt_options = ' '
 
 CHICORY_MEM = '3'
 TARGET_MEM = '8'
-DAIKON_MEM = '8'
+DAIKON_MEM = '17'
 QUEUE = 'u2-grid'
 NCPUS =  8
 WALL_TIME =  72 * 60
