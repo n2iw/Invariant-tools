@@ -54,6 +54,9 @@ if __name__ == '__main__':
             if lineNum in invs:
                 addRowToSum(sums, row, startCol)
                 writer.writerow(row)
+                invs.remove(lineNum)
+                if len(invs) == 0:
+                    break
         else:
             if int(row[0]) in invs:
                 addRowToSum(sums, row, startCol)
