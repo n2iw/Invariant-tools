@@ -54,7 +54,8 @@ def loadInvariantToDict(f):
             if new_ppt:
                 new_ppt = False
                 ppt = line.rstrip("\n\r")
-                data[ppt] = set() 
+                if ppt not in data:
+                    data[ppt] = set() 
             else:
                 if ppt:
                     data[ppt].add(line.rstrip("\n\r"))
