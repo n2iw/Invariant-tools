@@ -30,6 +30,7 @@ if __name__ == '__main__':
     parser.add_argument('first', help='matrix A need to compare', type=argparse.FileType('r'))
     parser.add_argument('second', help='base matrix B', type=argparse.FileType('r'))
     parser.add_argument('-n', '--no-names', action='store_true', help="instead of printing program point and invariant names, print line numbers, this option can significantly reduce output file size")
+    parser.add_argument('-q', '--quiet', action='store_true', help="only output statictics")
     args = parser.parse_args()
 
     reader1 = csv.reader(args.first)
@@ -37,7 +38,9 @@ if __name__ == '__main__':
     writer = csv.writer(sys.stdout)
 
     # output header
-    writer.writerow(next(reader1))
+    header = next(reader1)
+    if not args.quiet:
+        writer.writerow(header)
     next(reader2)
 
     # calculate first data column
@@ -58,9 +61,10 @@ if __name__ == '__main__':
         totalViolation += nViolation
         totalFiltered += nFiltered
         totalSame += nSame
-        writer.writerow(line1)
+        if not args.quiet:
+            writer.writerow(line1)
 
-    print("Total violdations: {}\nTotal filtered: {}\nTotal Same: {}".format(totalViolation, totalFiltered, totalSame), file=sys.stderr)
+    print("Total violdations: {}\nTotal filtered: {}\nRemaining violation: {}\nTotal Pass: {}".format(totalViolation, totalFiltered, totalViolation - totalFiltered, totalSame), file=sys.stderr)
     print("Filter rate: {0:0.2%}%".format(totalFiltered/totalViolation), file=sys.stderr)
 
 
