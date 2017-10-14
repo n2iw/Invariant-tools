@@ -524,7 +524,7 @@ if __name__ == '__main__':
 
         folder = '{}_{}'.format(kind, i)
         #CP = args.prefix + folder + '/build/test:'
-        CP = args.prefix + folder + '/build/compiler.jar'
+        CP = '{0}{1}/build/compiler.jar:{0}{1}/build/lib/rhino.jar:{0}{1}/build/classes'.format(args.prefix, folder)
         JUNIT = args.prefix + folder + '/lib/junit.jar'
 
         cmds = []
