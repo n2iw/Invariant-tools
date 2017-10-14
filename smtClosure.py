@@ -590,7 +590,7 @@ if __name__ == '__main__':
 
         version = '{}_{}'.format(kind, i)
         JUNIT = '$PWD/{}/lib/junit.jar'.format(version)
-        CP = '$PWD/{}/build/compiler.jar'.format(version)
+        CP = '$PWD/{0}/build/compiler.jar:$PWD/{0}/build/lib/rhino.jar:$PWD/{0}/build/classes'.format(version)
         dtraceFile = '{}_{}.dtrace.gz'.format(kind, i)
         dtraceOutput = ' --dtrace-file=' + dtraceFile
         invFile = '{}_{}.inv.gz'.format(kind, i)
