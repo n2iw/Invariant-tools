@@ -7,7 +7,7 @@ import os
 from run_lib import *
 
 FIRST_NUM = 1
-LAST_NUM = 60 
+LAST_NUM = 100000 
 PREFIX = os.environ['PWD'] + '/'
 JUNIT = PREFIX + 'lib/junit-3.8.2.jar'
 SAMPLE = ' --sample-start=100'
