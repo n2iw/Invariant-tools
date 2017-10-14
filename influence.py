@@ -73,7 +73,9 @@ if __name__ == '__main__':
 
     lineNum = 0
     all_classes = set()
+    affected_classes = set()
     all_methods = set()
+    affected_methods = set()
     for row in reader:
         # className = getClass(row[PPT_COL])
         # methodName = getMethod(row[PPT_COL])
@@ -84,8 +86,10 @@ if __name__ == '__main__':
             if row[i] == '1':
                 invariants[i] += 1
                 classes[i].add(className)
+                affected_classes.add(className)
                 if len(methodName) != 0:
                     methods[i].add(methodName)
+                    affected_methods.add(methodName)
         lineNum += 1
 
     for i in range(START_COL, len(headers)):
@@ -100,6 +104,9 @@ if __name__ == '__main__':
             for m in methods[i]:
                 print(m)
         print("Invariants: {}".format(invariants[i]))
+
     print("Total invariants: {}".format(lineNum))
     print("Total classes: {}".format(len(all_classes)))
+    print("Affected classes: {}".format(len(affected_classes)))
     print("Total methods: {}".format(len(all_methods)))
+    print("Affected methods: {}".format(len(affected_methods)))
