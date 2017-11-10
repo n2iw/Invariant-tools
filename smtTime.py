@@ -9,6 +9,7 @@ import sys
 FIRST_NUM = 1
 LAST_NUM = 60 
 JUNIT = '$PWD/lib/junit-3.8.2.jar'
+
 # SAMPLE = ' --sample-start=100'
 SAMPLE = ' '
 OPTIONS_TMP = " --noversion --omit_from_output 0r --no_text_output -o {}"
@@ -31,6 +32,11 @@ COMPARABILITY_FILES = ['org.joda.time.TestAll.decls-DynComp' ,
         ]
 # omit_ppt_options = ' --ppt-omit-pattern=Test '
 omit_ppt_options = ' '
+
+TARGET_MEM = '2'
+DAIKON_MEM = '8'
+NCPUS =  8
+WALL_TIME =  72 * 60
 
 def generate_script(version, cmds, dry_run):
     fileName = "{}.sh".format(version)
@@ -60,17 +66,18 @@ if __name__ == '__main__':
     kind_group = parser.add_mutually_exclusive_group(required=True)
     kind_group.add_argument('-f', '--fixed', help='Run fixed versions', action='store_true')
     kind_group.add_argument('-b', '--buggy', help='Run buggy versions', action='store_true')
+    kind_group.add_argument('-u', '--mutant', help='Run mutant versions', action='store_true')
     # version range
     parser.add_argument('first', type=int, help='first version')
     parser.add_argument('last', type=int, help='last version')
     # commands to run
     parser.add_argument('task', help='task to run', choices=['runDaikon', 'runDaikonOnline'])
-    parser.add_argument('-m', '--target-mem', type=int, help='memory size', default=2)
-    parser.add_argument('-M', '--daikon-mem', type=int, help='memory size', default=8)
+    parser.add_argument('-m', '--target-mem', type=int, help='memory size', default=TARGET_MEM)
+    parser.add_argument('-M', '--daikon-mem', type=int, help='memory size', default=DAIKON_MEM)
     parser.add_argument('-d', '--dry-run', help="only print commands, won't run it" , action='store_true')
     parser.add_argument('-v', '--queue', help='Cluster queue to use', default='u2-grid')
-    parser.add_argument('-n', '--ncpus', type=int, help='cpus to require', default=8)
-    parser.add_argument('-w', '--wall-time', type=int, help='wall time', default=480)
+    parser.add_argument('-n', '--ncpus', type=int, help='cpus to require', default=NCPUS)
+    parser.add_argument('-w', '--wall-time', type=int, help='wall time', default=WALL_TIME)
 
     args = parser.parse_args()
 
@@ -87,9 +94,11 @@ if __name__ == '__main__':
         kind = 'fix'
     elif args.buggy:
         kind = 'buggy'
+    elif args.mutant:
+        kind = 'mutant'
     else:
         kind = 'buggy'
-        print 'Should provide --buggy or --fixed'
+        print 'Should provide --buggy, --fixed or --mutant'
 
     CONVERT = '$PWD/lib/joda-convert-1.2.jar'
     DAIKON = '$PWD/lib/daikon.jar' 
@@ -133,6 +142,7 @@ if __name__ == '__main__':
             cmd += ' --daikon'
             cmd += TEST_CLASS
             cmds.append(cmd)
+            cmds.append('rm {}'.format(dtraceFile))
 
         elif args.task == 'runDaikonOnline':
             #do run daikon online on cluster no intermedia dtrace file will be generated
