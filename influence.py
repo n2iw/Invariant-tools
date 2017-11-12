@@ -23,7 +23,7 @@ def getClassMethod(ppt):
         return (result2.group(1), result2.group(1) + result2.group(2))
     else:
         print("Can't find class in: {}".format(ppt))
-        return ""
+        return ("", "")
 
 def getClass(ppt):
     classPattern1 = r"(.*):::(OBJECT|CLASS)$"
@@ -56,6 +56,7 @@ if __name__ == '__main__':
     parser.add_argument('csv', help='csv file to Caculate', type=argparse.FileType('r'))
     parser.add_argument('-v', '--verbose', action='store_true', help="output affected classes and function names")
     args = parser.parse_args()
+    csv.field_size_limit(sys.maxsize)
 
     reader = csv.reader(args.csv)
     writer = csv.writer(sys.stdout)
@@ -80,8 +81,10 @@ if __name__ == '__main__':
         # className = getClass(row[PPT_COL])
         # methodName = getMethod(row[PPT_COL])
         className, methodName = getClassMethod(row[PPT_COL])
-        all_classes.add(className)
-        all_methods.add(methodName)
+        if className:
+            all_classes.add(className)
+        if methodName:
+            all_methods.add(methodName)
         for i in range(START_COL, len(headers)):
             if row[i] == '1':
                 invariants[i] += 1
