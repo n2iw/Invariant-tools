@@ -10,8 +10,8 @@ FIRST_NUM = 1
 LAST_NUM = 60 
 JUNIT = '$PWD/lib/junit-3.8.2.jar'
 
-# SAMPLE = ' --sample-start=100'
-SAMPLE = ' '
+SAMPLE = ' --sample-start=100'
+# SAMPLE = ' '
 OPTIONS_TMP = " --noversion --omit_from_output 0r --no_text_output -o {}"
 TEST_CLASS = ' daikonTest'
 PACKAGE = 'org.joda.time'
@@ -30,8 +30,8 @@ COMPARABILITY_FILES = ['org.joda.time.TestAll.decls-DynComp' ,
         'org.joda.time.format.TestAll.decls-DynComp' ,
         'org.joda.time.tz.TestAll.decls-DynComp'
         ]
-# omit_ppt_options = ' --ppt-omit-pattern=Test '
-omit_ppt_options = ' '
+omit_ppt_options = ' --ppt-omit-pattern=Test '
+# omit_ppt_options = ' '
 
 TARGET_MEM = '2'
 DAIKON_MEM = '8'
